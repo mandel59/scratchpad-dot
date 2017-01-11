@@ -1,0 +1,27 @@
+digraph Semantics {
+  graph [fontname="Yu Gothic"]
+  node [fontname="Yu Gothic"]
+  edge [fontname="Yu Gothic"]
+
+  {
+    提供者 [shape=doublecircle]
+    受領者 [shape=doublecircle]
+    文書 [shape=ellipse]
+    物品 [shape=ellipse]
+    意味 [shape=box]
+    役務 [shape=box]
+  }
+
+  提供者 -> 文書 [label=記述]
+  受領者 -> 文書 [label=読解]
+  提供者 -> 物品 [label=頒布]
+  受領者 -> 物品 [label=入手]
+  文書 -> 物品 [label=言及]
+  提供者 -> 意味 [style=dashed, label=通知]
+  提供者 -> 役務 [style=dashed, label=提供]
+  受領者 -> 意味 [style=dashed, label=認識]
+  受領者 -> 役務 [style=dashed, label=受領]
+  意味 -> 役務 [style=dashed, label=約束]
+  文書 -> 意味 [style=dashed, label=表現]
+  物品 -> 役務 [style=dashed, label=実現]
+}

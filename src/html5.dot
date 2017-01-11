@@ -1,0 +1,17 @@
+digraph Html5 {
+  graph [fontname="Yu Gothic"]
+  node [fontname="Yu Gothic"]
+  edge [fontname="Yu Gothic"]
+
+  {
+    文書 [shape=box]
+    Document [fontname="Courier New", shape=ellipse]
+    Element [fontname="Courier New", shape=ellipse]
+    事物 [shape=box]
+    要素API [shape=box]
+  }
+
+  Document -> 文書 [style=dashed, label=表現]
+  Element -> 事物 [style=dashed, label=表現]
+  Element -> 要素API [style=dashed, label=実装]
+}

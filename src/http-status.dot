@@ -1,0 +1,24 @@
+digraph HTTPStatus {
+
+  graph [fontname="Yu Gothic"]
+  node [fontname="Yu Gothic"]
+  edge [fontname="Yu Gothic", arrowhead=vee]
+
+  {
+    "URL[a]" [shape=ellipse]
+    "表現[a]" [shape=ellipse]
+    "文書[a]" [shape=box]
+
+    "URL[b]" [shape=ellipse]
+    "外界リソース[b]" [shape=box]
+  }
+
+  "URL[a]" -> "文書[a]" [label=identify, arrowhead=normal, style=dashed]
+  "表現[a]" -> "文書[a]" [label=represent, arrowhead=onormal, style=dashed]
+  "URL[a]" -> "表現[a]" [label="GET/200"]
+
+  "URL[b]" -> "外界リソース[b]" [label=identify, arrowhead=normal, style=dashed]
+  "URL[b]" -> "URL[a]" [label="GET/303"]
+  "文書[a]" -> "外界リソース[b]" [label=represent, arrowhead=onormal, style=dashed]
+
+}

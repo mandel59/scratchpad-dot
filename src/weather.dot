@@ -1,0 +1,23 @@
+digraph Weather {
+
+  graph [fontname="Yu Gothic"]
+  node [fontname="Yu Gothic"]
+  edge [fontname="Yu Gothic", arrowhead=vee]
+
+  {
+    "「晴れ」" [shape=ellipse]
+    "http://example.org/weather" [shape=ellipse]
+    "http://example.org/weather?date=2016-12-29" [shape=ellipse]
+    "2016-12-29の「天気」文書" [shape=box]
+    "「天気」文書" [shape=box]
+  }
+
+  "「晴れ」" -> "2016-12-29の「天気」文書" [label=represent, arrowhead=onormal, style=dashed]
+  "2016-12-29の「天気」文書" -> "「天気」文書" [label=snapshot, arrowhead=onormal]
+  "http://example.org/weather" -> "「天気」文書" [label=identify, arrowhead=normal, style=dashed]
+  "http://example.org/weather?date=2016-12-29" -> "2016-12-29の「天気」文書" [label=identify, arrowhead=normal, style=dashed]
+
+  "http://example.org/weather" -> "http://example.org/weather?date=2016-12-29" [label="GET/303(2016-12-29)"]
+  "http://example.org/weather?date=2016-12-29" -> "「晴れ」" [label="GET/200"]
+
+}

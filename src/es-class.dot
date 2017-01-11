@@ -1,0 +1,78 @@
+digraph ESClass {
+
+  graph [fontname="Yu Gothic"]
+  node [fontname="Yu Gothic", shape=box]
+  edge [fontname="Yu Gothic", arrowhead=vee]
+
+  rankdir=BT
+
+  {
+    rank=max
+    "null" [shape=ellipse]
+  }
+
+  {
+    "Object"
+    "Object.prototype"
+
+    "Object" -> "Object.prototype" [label=prototype]
+    "Object.prototype" -> "Object" [label=constructor]
+  }
+
+  {
+    "Function"
+    "Function.prototype"
+
+    "Function" -> "Function.prototype" [label=prototype]
+    "Function.prototype" -> "Function" [label=constructor]
+  }
+
+  "Object" -> "Function.prototype" [arrowhead=onormal, arrowtail=none]
+  "Object.prototype" -> "null" [arrowhead=onormal, arrowtail=none]
+
+  "Function" -> "Function.prototype" [arrowhead=onormal, arrowtail=none]
+  "Function.prototype" -> "Object.prototype" [arrowhead=onormal, arrowtail=none]
+
+  {
+    rank=same
+
+    "class X {}"
+    "X.prototype"
+
+    "class X {}" -> "X.prototype" [label=prototype]
+    "X.prototype" -> "class X {}" [label=constructor]
+  }
+
+  "class X {}" -> "Function.prototype" [arrowhead=onormal, arrowtail=none]
+  "X.prototype" -> "Object.prototype" [arrowhead=onormal, arrowtail=none]
+  "new X()" -> "X.prototype" [arrowhead=onormal, arrowtail=none]
+
+  {
+    rank=same
+
+    "class Y extends X {}"
+    "Y.prototype"
+
+    "class Y extends X {}" -> "Y.prototype" [label=prototype]
+    "Y.prototype" -> "class Y extends X {}" [label=constructor]
+  }
+
+  "class Y extends X {}" -> "class X {}" [arrowhead=onormal, arrowtail=none]
+  "Y.prototype" -> "X.prototype" [arrowhead=onormal, arrowtail=none]
+  "new Y()" -> "Y.prototype" [arrowhead=onormal, arrowtail=none]
+
+  {
+    rank=same
+
+    "class Z extends Y {}"
+    "Z.prototype"
+
+    "class Z extends Y {}" -> "Z.prototype" [label=prototype]
+    "Z.prototype" -> "class Z extends Y {}" [label=constructor]
+  }
+
+  "class Z extends Y {}" -> "class Y extends X {}" [arrowhead=onormal, arrowtail=none]
+  "Z.prototype" -> "Y.prototype" [arrowhead=onormal, arrowtail=none]
+  "new Z()" -> "Z.prototype" [arrowhead=onormal, arrowtail=none]
+
+}

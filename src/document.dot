@@ -1,0 +1,29 @@
+digraph Document {
+
+  graph [fontname="Yu Gothic"]
+  node [fontname="Yu Gothic"]
+  edge [fontname="Yu Gothic", arrowhead=vee]
+
+  {
+    "URL" [shape=ellipse]
+    "HTML文書" [shape=ellipse]
+    "DOMツリー" [shape=ellipse]
+    "紙面" [shape=ellipse]
+    "認識" [shape=ellipse]
+    "理解" [shape=ellipse]
+    "抽象文書" [shape=box]
+    "事物" [shape=box]
+  }
+
+  "URL" -> "HTML文書" [label=GET]
+  "HTML文書" -> "DOMツリー" [label=parse]
+  "DOMツリー" -> "抽象文書" [label=represent, arrowhead=onormal, style=dashed]
+  "DOMツリー" -> "紙面" [label=render]
+  "紙面" -> "認識" [label=recognize]
+  "認識" -> "理解" [label=comprehend]
+  "認識" -> "抽象文書" [label=of, style=dashed]
+  "理解" -> "事物" [label=of, style=dashed]
+  "抽象文書" -> "事物" [label=describe, style=dashed]
+
+  "URL" -> "抽象文書" [label="identify", arrowhead=normal, style=dashed]
+}

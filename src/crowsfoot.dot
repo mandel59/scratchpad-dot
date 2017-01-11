@@ -1,0 +1,20 @@
+digraph Martin {
+
+  rankdir=LR
+
+  graph [fontname="Yu Gothic"]
+  node [fontname="Yu Gothic", shape=box]
+  edge [fontname="Yu Gothic", dir=both, minlen=2]
+
+  {rank=same "A×B" "R:A→B"}
+  {rank=same "B" "R(A)"}
+
+  "A" -> "A×B" [arrowtail=teetee, arrowhead=crowtee]
+  "A" -> "R:A→B" [arrowtail=teetee, arrowhead=teetee]
+  "A×B" -> "R:A→B" [arrowtail=teetee, arrowhead=teeodot]
+  "A×B" -> "B" [arrowtail=crowtee, arrowhead=teetee]
+  "R:A→B" -> "B" [arrowtail=crowodot, arrowhead=teetee]
+  "R:A→B" -> "R(A)" [arrowtail=crowtee, arrowhead=teetee]
+  "B" -> "R(A)" [arrowtail=teetee, arrowhead=teeodot]
+
+}

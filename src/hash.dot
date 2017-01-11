@@ -1,0 +1,28 @@
+digraph HashMethod {
+
+  graph [fontname="Yu Gothic"]
+  node [fontname="Yu Gothic"]
+  edge [fontname="Yu Gothic", arrowhead=vee]
+
+  {
+    "URL" [shape=ellipse]
+    "表現" [shape=ellipse]
+    "文書" [shape=box]
+
+    "URL#hash" [shape=ellipse]
+    "外界リソース" [shape=box]
+
+    "フラグメント" [shape=box]
+  }
+
+  "URL" -> "文書" [label=identify, arrowhead=normal, style=dashed]
+  "URL" -> "表現" [label="GET/200"]
+  "表現" -> "文書" [label=represent, arrowhead=onormal, style=dashed]
+
+  "URL#hash" -> "フラグメント" [label="identify?", arrowhead=normal, style=dashed]
+  "URL#hash" -> "外界リソース" [label="identify?", arrowhead=normal, style=dashed]
+  "URL#hash" -> "URL" [label=truncate]
+
+  "フラグメント" -> "文書" [label="part of", arrowhead=diamond]
+  "フラグメント" -> "外界リソース" [label=represent, arrowhead=onormal, style=dashed]
+}

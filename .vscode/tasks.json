@@ -1,0 +1,24 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "0.1.0",
+  "command": "C:\\MinGW\\bin\\mingw32-make.exe",
+  "suppressTaskName": true,
+  "showOutput": "silent",
+  "tasks": [
+    {
+      "taskName": "all",
+      "isBuildCommand": true,
+      "problemMatcher": {
+        "owner": "",
+        "fileLocation": ["relative", "${workspaceRoot}"],
+        "pattern": {
+          "regexp": "^Error: (.*):\\s+(.*\\s+in line (\\d+) near '(.*)')$",
+          "file": 1,
+          "line": 3,
+          "message": 2
+        }
+      }
+    }
+  ]
+}
