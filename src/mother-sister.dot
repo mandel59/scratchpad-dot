@@ -1,0 +1,16 @@
+digraph MotherSister {
+
+  graph [fontname="Yu Gothic"]
+  node [fontname="Yu Gothic"]
+  edge [fontname="Yu Gothic", arrowhead=onormal]
+
+  rankdir=BT
+
+  姉の母 -> 父 [arrowhead=none]
+  姉 -> 姉の母
+  姉 -> 父
+  姉 -> 父 [arrowhead=none]
+  私 -> 姉
+  私 -> 父
+
+}

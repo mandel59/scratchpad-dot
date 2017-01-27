@@ -1,0 +1,19 @@
+digraph CisMasculineMale {
+
+  graph [fontname="Yu Gothic"]
+  node [fontname="Yu Gothic", shape=box]
+  edge [fontname="Yu Gothic"]
+
+  rankdir=RL
+
+  subgraph cluster_sex { label="性" style=filled color=lightgrey オス メス }
+  subgraph cluster_gender_expression { label="性表現" style=filled color=lightgrey マスキュリン フェミニン }
+  subgraph cluster_vestism { label="服装" style=filled color=lightgrey 女装 男装 }
+  subgraph cluster_gender_identity { label="性自認" style=filled color=lightgrey 男性 女性 }
+
+  シス・マスキュリン男装男性 -> オス [arrowhead=onormal]
+  シス・マスキュリン男装男性 -> マスキュリン [arrowhead=normal]
+  シス・マスキュリン男装男性 -> 男装 [arrowhead=normal]
+  シス・マスキュリン男装男性 -> 男性 [arrowhead=onormal, style=dashed]
+
+}

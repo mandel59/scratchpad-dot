@@ -1,0 +1,37 @@
+digraph ChromosomeAbnormality {
+
+  graph [fontname="Yu Gothic"]
+  node [fontname="Yu Gothic", shape=box]
+  edge [fontname="Yu Gothic", arrowhead=diamond]
+
+  rankdir=RL
+
+  subgraph cluster_chromosome_x {
+    style=filled color=lightgrey label="染色体X"
+    rank=same X XX XXX
+  }
+
+  subgraph cluster_chromosome_y {
+    style=filled color=lightgrey label="染色体Y"
+    rank=same O Y YY
+  }
+
+  XXX -> トリプルX女性
+  O -> トリプルX女性
+
+  XX -> 女性
+  O -> 女性
+
+  X -> ターナー症候群
+  O -> ターナー症候群
+
+  XX -> クラインフェルター症候群
+  Y -> クラインフェルター症候群
+
+  X -> 男性
+  Y -> 男性
+
+  X -> XYY男性
+  YY -> XYY男性
+
+}

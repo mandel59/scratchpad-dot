@@ -1,0 +1,12 @@
+digraph SexualOrientation {
+
+  graph [fontname="Yu Gothic"]
+  node [fontname="Yu Gothic", shape=box]
+  edge [fontname="Yu Gothic", arrowhead=vee]
+
+  オス -> オス [label=同性愛]
+  オス -> メス [label=異性愛]
+  メス -> メス [label=同性愛]
+  メス -> オス [label=異性愛]
+
+}

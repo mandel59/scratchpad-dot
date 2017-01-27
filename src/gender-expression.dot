@@ -1,0 +1,35 @@
+digraph GenderIdentity {
+
+  graph [fontname="Yu Gothic"]
+  node [fontname="Yu Gothic", shape=box]
+  edge [fontname="Yu Gothic", arrowhead=vee]
+
+  rankdir=RL
+
+  { rank=same 男性 女性 オス メス マスキュリン フェミニン }
+
+  男性 -> オス [arrowhead=none, style=dotted]
+  メス -> 女性 [arrowhead=none, style=dotted]
+
+  { rank=same シス男性 トランス男性 トランス女性 シス女性 }
+
+  シス男性 -> オス [arrowhead=onormal]
+  シス男性 -> 男性 [arrowhead=onormal, style=dashed]
+
+  シス女性 -> メス [arrowhead=onormal]
+  シス女性 -> 女性 [arrowhead=onormal, style=dashed]
+
+  トランス男性 -> メス [arrowhead=onormal]
+  トランス男性 -> 男性 [arrowhead=onormal, style=dashed]
+
+  トランス女性 -> オス [arrowhead=onormal]
+  トランス女性 -> 女性 [arrowhead=onormal, style=dashed]
+  /*
+  シス男性 -> 女性 [label=シス男性異性愛]
+  シス女性 -> 男性 [label=シス女性異性愛]
+  シス男性 -> 男性 [label=シス男性同性愛]
+  シス女性 -> 男性 [label=シス女性同性愛]
+  トランス男性 -> 男性 [label=トランス男性同性愛]
+  トランス女性 -> 男性 [label=トランス女性異性愛]
+  */
+}
