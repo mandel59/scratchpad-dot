@@ -1,0 +1,24 @@
+digraph Matrix {
+
+  graph [fontname="Yu Gothic", ranksep="2", nodesep="1"]
+  node [fontname="Yu Gothic"]
+  edge [fontname="Yu Gothic", arrowhead=vee]
+
+  rankdir=RL
+
+  subgraph cluster_Right {
+    R0 [label=0]
+    R1 [label=1]
+  }
+
+  subgraph cluster_Left {
+    L0 [label=0]
+    L1 [label=1]
+  }
+
+  R0 -> L0 [label="0"]
+  R1 -> L0 [label="0"]
+  R0 -> L1 [label="0"]
+  R1 -> L1 [label="1"]
+
+}

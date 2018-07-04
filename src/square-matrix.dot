@@ -1,0 +1,19 @@
+digraph Matrix {
+
+  graph [fontname="Segoe UI", ranksep="2", nodesep="1"]
+  node [fontname="Segoe UI Emoji"]
+  edge [fontname="Segoe UI", arrowhead=vee]
+
+  rankdir=RL
+
+  ✊ -> ✊ [label="0"]
+  ✊ -> ✌ [label="1"]
+  ✊ -> ✋ [label="−1"]
+  ✌ -> ✊ [label="−1"]
+  ✌ -> ✌ [label="0"]
+  ✌ -> ✋ [label="1"]
+  ✋ -> ✊ [label="1"]
+  ✋ -> ✌ [label="−1"]
+  ✋ -> ✋ [label="0"]
+
+}

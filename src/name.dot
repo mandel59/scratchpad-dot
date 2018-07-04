@@ -1,0 +1,52 @@
+digraph Name {
+
+  graph [fontname="Yu Gothic"]
+  node [fontname="Yu Gothic"]
+  edge [fontname="Yu Gothic", arrowhead=vee]
+
+  rankdir=BT
+
+  subgraph cluster_デレマス {
+    label=デレマス
+    一ノ瀬志希
+    二宮飛鳥
+    神崎蘭子
+  }
+
+  subgraph cluster_クラウズ {
+    label=クラウズ
+    一ノ瀬はじめ
+    爾乃美家累
+  }
+
+  subgraph cluster_あいまいみー {
+    label=あいまいみー
+    愛
+    麻衣
+    ミイ
+    ぽのか先輩
+  }
+
+  // 声優関係
+  一ノ瀬志希 -> 藍原ことみ
+  二宮飛鳥 -> 青木志貴
+  神崎蘭子 -> 内田真礼
+
+  一ノ瀬はじめ -> 内田真礼
+  爾乃美家累 -> 村瀬歩
+
+  愛 -> 大坪由佳
+  麻衣 -> 内田彩
+  ミイ -> 内田真礼
+  ぽのか先輩 -> 茅野愛衣
+
+  // 同姓関係
+  一ノ瀬はじめ -> 一ノ瀬志希 [style=dashed, arrowhead=none]
+  爾乃美家累 -> 二宮飛鳥 [style=dashed, arrowhead=none]
+  内田彩 -> 内田真礼 [style=dashed, arrowhead=none]
+
+  // 同名関係
+  青木志貴 -> 一ノ瀬志希 [style=dashed, arrowhead=none]
+  愛 -> 茅野愛衣 [style=dashed, arrowhead=none]
+
+}
